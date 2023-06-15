@@ -1,4 +1,4 @@
-package com.api.apispringkotlin.api
+package com.api.apispringkotlin.api.controller
 
 import com.api.apispringkotlin.api.dto.GetProductDto
 import com.api.apispringkotlin.api.dto.ProductDto
@@ -35,7 +35,8 @@ class ProductApi(private val productRepository: ProductRepository, private val p
         val product: Product = productServiceImpl.getProductById(id)
 
         if(product != null) {
-            return ResponseEntity.ok().body(product)
+            val productDto = GetProductDto(product)
+            return ResponseEntity.ok().body(productDto)
         }
         return ResponseEntity.notFound().build()
     }

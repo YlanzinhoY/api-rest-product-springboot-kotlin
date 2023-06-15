@@ -8,5 +8,9 @@ data class GetProductDto(
     var name: String,
     var price: Double
 ) {
-
+    constructor(product: Product) : this(product.getId(), product.getName(), product.getPrice()) {
+        id = product.getId()
+        name = product.getName()
+        price = product.getPrice()
+    }
 }
