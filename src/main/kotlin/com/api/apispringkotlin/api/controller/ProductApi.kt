@@ -24,7 +24,6 @@ import java.util.UUID
 @RequestMapping("/api/product/")
 class ProductApi(private val productRepository: ProductRepository, private val productServiceImpl: ProductServiceImpl) {
 
-
    @PostMapping("product")
    fun createProduct(@RequestBody @Valid productDto: ProductDto): ResponseEntity<ProductDto> {
        val product = productRepository.save(Product(productDto))
@@ -40,5 +39,4 @@ class ProductApi(private val productRepository: ProductRepository, private val p
         }
         return ResponseEntity.notFound().build()
     }
-
 }
