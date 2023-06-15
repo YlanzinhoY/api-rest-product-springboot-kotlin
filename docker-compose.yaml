@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_DB=product
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=postgres
+    ports:
+      - '5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local

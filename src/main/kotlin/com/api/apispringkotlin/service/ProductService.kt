@@ -6,4 +6,7 @@ import java.util.UUID
 interface ProductService {
     fun getAllProducts(): List<Product>
     fun getProductById(id: UUID): Product
+    fun saveProduct(product: Product): Product
+    fun updateProduct(product: Product): Product
+    fun deleteProductById(id: UUID)
 }
